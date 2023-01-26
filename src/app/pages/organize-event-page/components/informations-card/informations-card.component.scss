@@ -1,0 +1,14 @@
+@import 'src/stylings/theme';
+
+.event__card {
+  background-color: $app-background-secondary;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 15px;
+  padding: 10px;
+  color: $fontcolor-primary-dark;
+
+  h2, h4 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+}

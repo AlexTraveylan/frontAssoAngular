@@ -1,0 +1,84 @@
+@import 'src/stylings/theme';
+
+.form__container {
+
+  display: flex;
+  justify-content: center;
+  background-color: $app-background-secondary;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+
+  form {
+    width: 92%;
+
+
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight:bold;
+      color: $fontcolor-primary-dark;
+    }
+
+    label {
+      color: $fontcolor-primary-dark;
+      display: block;
+    }
+
+    .top__form {
+      display: flex;
+      flex-direction: row;
+
+
+      .name__field {
+        width: 30%;
+        margin-right: 15px;
+      }
+
+      .email__field {
+        width: calc(70% - 15px);
+      }
+    }
+
+
+    .message__field {
+      width: 100%;
+    }
+
+    .btn__field {
+      display: flex;
+      justify-content: center;
+      margin: 15px 0 ;
+
+      .btn__icon {
+        color: $fontcolor-primary-dark;
+
+        &:hover {
+          color: $special-succes;
+        }
+      }
+
+      .send__message {
+        color: $fontcolor-primary-dark;
+        margin-left: 15px;
+
+        &:hover {
+          color: $special-succes;
+        }
+      }
+
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid $app-primary;
+        border-radius: 4px;
+    }
+  }
+
+}
+

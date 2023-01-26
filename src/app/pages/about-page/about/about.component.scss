@@ -1,0 +1,17 @@
+@import 'src/stylings/theme';
+
+.members__container {
+  text-align: center;
+
+  .members__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.links__container {
+  justify-content: center;
+  align-items: center;
+}
+

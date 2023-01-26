@@ -1,0 +1,19 @@
+@import "src/stylings/theme";
+
+footer {
+
+  background-color: $app-background-secondary;
+  color: $fontcolor-primary-dark;
+  width: 100vw;
+  padding: 25px;
+
+  .version__date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .title {
+    text-align: center;
+  }
+}

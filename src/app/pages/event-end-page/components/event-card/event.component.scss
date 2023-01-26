@@ -1,0 +1,81 @@
+@import 'src/stylings/theme';
+
+.event {
+  display: flex;
+  align-items: center;
+  border: 1px none transparent;
+  background-color: $app-background-secondary;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 15px;
+  padding: 10px;
+
+  .event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 25px;
+
+    .event-day {
+    font-size: 32px;
+    font-weight: bold;
+    color: $fontcolor-primary-dark;
+    }
+
+    .event-month {
+      font-size: 16px;
+      text-transform: uppercase;
+      color: $fontcolor-primary-dark;
+    }
+
+    .event-year {
+      font-size: 14px;
+      color: $fontcolor-primary-trans;
+    }
+  }
+
+  .event-description {
+    display: flex;
+    flex-direction: column;
+
+    .event-title {
+      font-size: 24px;
+      color: $fontcolor-primary-dark;
+    }
+
+    .event-details {
+      margin: 10px 0 0;
+      font-size: 16px;
+      color: $fontcolor-primary-dark;
+    }
+
+    .event-link {
+      display: block; /* affiche le titre sur une ligne séparée */
+      margin: 0;
+      font-size: 12px;
+      text-decoration: none; /* retire le soulignement sous le lien */
+      cursor: pointer;
+      color: $fontcolor-primary-trans;
+
+      &:hover {
+        color: $fontcolor-primary-dark;
+      }
+
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

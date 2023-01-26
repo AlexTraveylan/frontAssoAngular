@@ -1,0 +1,30 @@
+<div class="form__container">
+
+  <form>
+    <h2> Nous contacter</h2>
+
+    <div class="top__form">
+      <div class="name__field">
+        <label for="name">Nom : </label>
+        <input type="text" [(ngModel)]="name" name="name">
+      </div>
+
+      <div class="email__field">
+        <label for="email">Email : </label>
+        <input type="email" [(ngModel)]="email" name="email">
+      </div>
+    </div>
+
+    <div class="message__field">
+      <label for="message">Message : </label>
+      <textarea [(ngModel)]="message" name="message"></textarea>
+    </div>
+
+    <div class="btn__field">
+      <app-btn>
+        <app-icon class="btn__icon" type="SEND"></app-icon><span class="send__message">Envoyer le message</span>
+      </app-btn>
+    </div>
+  </form>
+
+</div>

@@ -1,0 +1,114 @@
+@import "src/stylings/theme";
+
+header {
+  color: $fontcolor-primary-dark;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  margin-top: 15px;
+
+  h1 {
+    transform: translateX(-50px);
+    font-size: 1.6em;
+  }
+
+  img {
+    max-height: 70px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+  .btn__container {
+    margin-right: 30px;
+
+    .nav__icon {
+      color: $fontcolor-primary-dark;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    h1 {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  header {
+    justify-content: start;
+    h1{
+      margin-left: calc((100vw - 15px - 209.317px - 490.333px) / 2);
+    }
+
+  }
+
+  .nav__container {
+    display: none;
+  }
+  .btn__container {
+    display: none;
+  }
+}
+
+
+.side__nav__bar__container {
+  transition: all 0.5s;
+  background-color: $app-background;
+  opacity: 0.95;
+  height: 100vh;
+  top: 100px;
+  right: 0;
+  position: fixed;
+  z-index: 2;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    gap: 15px;
+
+    a {
+      text-decoration: none;
+      color: $fontcolor-primary-trans;
+      display: inline-block;
+      position: relative;
+
+      &::after {
+        content : "";
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        width: 100%;
+        height: 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+        background: $fontcolor-primary-dark;
+        transition: transform 0.3s ease-out;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+      }
+
+      .router-link-active {
+        color: $fontcolor-primary-dark;
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+
+    }
+}
+
+

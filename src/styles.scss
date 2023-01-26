@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+/* Importing Bootstrap SCSS file. */
+@import "stylings/reset";
+@import "/node_modules/Bootstrap/SCSS/Bootstrap";
+@import "stylings/theme";
+
+
+body{
+  background-color: $app-background;
+  font-family: $secondary-font;
+  color: $fontcolor-primary;
+}

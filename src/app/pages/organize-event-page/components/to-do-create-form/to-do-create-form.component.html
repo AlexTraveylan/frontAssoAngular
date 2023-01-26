@@ -1,0 +1,31 @@
+<div class="btn__container" (click)="toggleTodoForm()">
+  <app-btn>
+    <app-icon class="btn__add" class="btn__add" type="PLUS"></app-icon>
+  </app-btn>
+</div>
+
+<div class="container-fluid" *ngIf="isVisibleForm">
+  <div class="row">
+
+    <div class="card col-11 col-md-6 col-xl-4">
+      <h3>Création d'une nouvelle tache</h3>
+      <form [formGroup]="toDoForm">
+        <div>
+          <label for="description">Description:</label>
+          <input class="form-control" type="text" formControlName="description">
+        </div>
+        <div>
+          <label for="informations">Informations:</label>
+          <textarea class="form-control" formControlName="informations"></textarea>
+        </div>
+        <button type="submit" [disabled]="toDoForm.invalid" (click)="onSubmit()">Créer cette tâche</button>
+      </form>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-4" *ngIf="toDoCardPreview$ | async as toDo">
+      <h3>Aperçu avant validation : </h3>
+      <app-to-do-card [toDo]="toDo"></app-to-do-card>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="form__container" *ngIf="!isAcces">
+  <form>
+    <div>
+      <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Mot de passe">
+    </div>
+    <button type="submit" (click)="submit()">Soumettre</button>
+    <div class="message_container" *ngIf="message">
+      <p>{{ message }}</p>
+    </div>
+  </form>
+</div>
+
+<div class="autorized__container" *ngIf="isAcces">
+  <div *ngIf="organisation$ | async as organisation">
+    <app-informations-card [organisation]="organisation"></app-informations-card>
+    <div class="container-fluid px-0">
+      <div class="row">
+        <app-to-do-card class="col-12 col-md-6 col-xl-4" *ngFor="let item of organisation.toDo"
+          [toDo]="item"></app-to-do-card>
+      </div>
+      <app-to-do-create-form [organisationId]="organisation.id"></app-to-do-create-form>
+    </div>
+
+  </div>
+</div>

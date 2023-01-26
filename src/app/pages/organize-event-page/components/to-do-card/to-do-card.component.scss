@@ -1,0 +1,40 @@
+@import 'src/stylings/theme';
+
+.todo__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  background-color: $app-background-secondary;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 15px;
+  padding: 10px;
+}
+
+.toDo__left {
+  color: $fontcolor-primary-dark;
+}
+
+.strike {
+  background-color: $special-succes;
+}
+
+.btn__check {
+  color: $special-succes;
+}
+
+.btn_checked {
+  color: $special-succes-dark;
+}
+
+.toDo__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+.btn__supp {
+  color: $special-danger;
+}

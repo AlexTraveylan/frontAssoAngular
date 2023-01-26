@@ -1,0 +1,28 @@
+@import "src/stylings/theme";
+
+.ui1__footer {
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  z-index: 2;
+}
+
+.ui1__header {
+  position:fixed;
+  top: 0;
+  height: 100px;
+  z-index: 2;
+  background-color: $app-background;
+}
+
+.main {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .ui1__nav {
+    display: none;
+  }
+}

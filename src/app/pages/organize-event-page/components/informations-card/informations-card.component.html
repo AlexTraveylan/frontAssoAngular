@@ -1,0 +1,8 @@
+<div class="event__card">
+  <h2>{{ organisation.typeEvent }} (Progression : {{ organisation.toDo | pourcent }})</h2>
+  <h4>{{ organisation.description }}</h4>
+  <p><strong>Lieu : </strong> {{ organisation.lieu }}</p>
+  <p><strong>Date : </strong> {{ organisation.date }}</p>
+  <p *ngIf="organisation.horaire"><strong>Horaire : </strong> {{ organisation.horaire }}</p>
+  <p *ngIf="organisation.tarifs"><strong>Tarifs : </strong> {{ organisation.tarifs }}</p>
+</div>

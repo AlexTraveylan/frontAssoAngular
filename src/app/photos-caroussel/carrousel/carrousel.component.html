@@ -1,0 +1,3 @@
+<div class="carousel" (click)="next()">
+  <img *ngFor="let image of images" [src]="image" [hidden]="image !== images[currentIndex]">
+</div>

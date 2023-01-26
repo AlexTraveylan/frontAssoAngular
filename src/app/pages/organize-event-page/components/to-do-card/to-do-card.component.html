@@ -1,0 +1,12 @@
+<div class="todo__card" [ngClass]="{'strike': toDo.isChecked}">
+  <div class="toDo__left">
+    <p>{{ toDo.description }}</p>
+  </div>
+
+  <div class="toDo__right">
+    <app-pop-up-card [information]="toDo.informations"></app-pop-up-card>
+    <app-btn (click)="toggle(toDo)"><app-icon class="btn__check" [ngClass]="{'btn_checked': toDo.isChecked}"
+        type="CHECKED"></app-icon></app-btn>
+    <app-btn (click)="delete(toDo.id)"><app-icon class="btn__supp" type="DELETE"></app-icon></app-btn>
+  </div>
+</div>

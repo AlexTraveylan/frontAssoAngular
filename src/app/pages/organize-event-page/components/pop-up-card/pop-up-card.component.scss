@@ -1,0 +1,28 @@
+@import 'src/stylings/theme';
+
+.btn__infos {
+  color: $fontcolor-primary-trans;
+}
+.popup__container {
+  position: absolute;
+  left: calc(50vw - 150px);
+  background-color: $app-background-secondary-dark;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 1em;
+  border-radius: 15px;
+
+  .btn_desactivate {
+    color: $fontcolor-primary-dark;
+  }
+
+  .information {
+    color: $fontcolor-primary;
+    text-align: center;
+    padding: 10px 0 10px 10px;
+
+  }
+}

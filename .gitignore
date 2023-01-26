@@ -40,3 +40,9 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# environ, api url informations
+/src/app/core/environ
+
+# personnals profil photos
+/src/assets/img/photos_profil

@@ -1,0 +1,34 @@
+<header>
+  <img src="assets/img/logos/LogoAsso.jpg" alt="logo Nelson Mandela" routerLink="home">
+
+  <h1>A.P.E. Parents Nelson Mandela (Bordeaux)</h1>
+
+  <div class="btn__container">
+    <div *ngIf="!isHidden">
+      <app-btn (click)="hide()"><app-icon class="nav__icon" type="CROSS"></app-icon></app-btn>
+    </div>
+    <div *ngIf="isHidden">
+      <app-btn (click)="hide()"><app-icon class="nav__icon" type="NAV"></app-icon></app-btn>
+    </div>
+  </div>
+
+</header>
+
+<div class="ajust_container" [ngClass]="{'hidden': isHidden}">
+
+</div>
+
+<div id="nav__container" class="side__nav__bar__container" [ngClass]="{'hidden' : isHidden}">
+  <div class="nav__container">
+    <nav>
+      <a (click)="hide()" routerLink="home" routerLinkActive="router-link-active">Accueil</a>
+      <a (click)="hide()" routerLink="about" routerLinkActive="router-link-active">Qui sommes-nous ?</a>
+      <a (click)="hide()" routerLink="conseils" routerLinkActive="router-link-active">Conseils d'école</a>
+      <a (click)="hide()" routerLink="compta" routerLinkActive="router-link-active">Comptabilité</a>
+      <a (click)="hide()" routerLink="eventend" routerLinkActive="router-link-active">Historique</a>
+      <a (click)="hide()" routerLink="joinus" routerLinkActive="router-link-active">Nous rejoindre</a>
+      <a (click)="hide()" routerLink="orga" routerLinkActive="router-link-active">S'organiser</a>
+    </nav>
+  </div>
+
+</div>

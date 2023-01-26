@@ -1,0 +1,15 @@
+<div class="conseil__card">
+  <div class="title__container" (click)="toggle()">
+    <h3> Conseil d'école du : {{ conseil.date }}</h3>
+  </div>
+
+  <div class="collapse__content" *ngIf="!isHidden">
+    <div class="resume__container">
+      <p> {{ conseil.resume }}</p>
+    </div>
+
+    <div class="detail__container">
+      <a [href]="conseil.detailPdf" target="_blank">Lien vers le compte rendu détaillé</a>
+    </div>
+  </div>
+</div>

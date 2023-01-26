@@ -1,0 +1,14 @@
+<div class="event">
+  <div class="event-date">
+    <span class="event-day">{{ theEvent.day }}</span>
+    <span class="event-month">{{ theEvent.mouth }}</span>
+    <span class="event-year">{{ theEvent.year }}</span>
+  </div>
+  <div class="event-description">
+    <h2 class="event-title">{{ theEvent.title }}</h2>
+    <p class="event-details">{{ theEvent.description }}</p>
+    <div *ngIf="theEvent.lien">
+      <a class="event-link" (click)="ouvreNouvelOnglet(theEvent.lien)">En savoir plus</a>
+    </div>
+  </div>
+</div>

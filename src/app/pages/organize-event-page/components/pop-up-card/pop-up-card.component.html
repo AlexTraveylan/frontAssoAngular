@@ -1,0 +1,12 @@
+<div class="btn__activate">
+  <app-btn (click)="activate()"><app-icon class="btn__infos" type="INFOS"></app-icon></app-btn>
+</div>
+
+<div class="popup__container" *ngIf="showPopup">
+  <div class="information">
+    {{ information }}
+  </div>
+  <div>
+    <app-btn (click)="activate()"><app-icon class="btn_desactivate" type="CROSS"></app-icon></app-btn>
+  </div>
+</div>
