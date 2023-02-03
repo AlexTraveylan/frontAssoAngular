@@ -1,6 +1,9 @@
 import {
+  faArrowLeft,
   faBars,
   faCheck,
+  faCheckCircle,
+  faCircle,
   faEdit,
   faInfo,
   faPaperPlane,
@@ -18,4 +21,7 @@ export const Icons = {
   CHECKED: faCheck,
   PLUS: faPlus,
   SEND: faPaperPlane,
+  LEFT: faArrowLeft,
+  CIRCLE: faCircle,
+  CIRCLECHECKED: faCheckCircle,
 };

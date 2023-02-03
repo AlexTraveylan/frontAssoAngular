@@ -1,29 +1,50 @@
 @import 'src/stylings/theme';
 
-form {
+.form__container {
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
 
-  input[type="password"] {
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid $app-primary-light;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    label {
+      color: $fontcolor-primary-dark;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    input {
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid $app-primary-light;
+    }
+
+    button[type="submit"] {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: $app-primary;
+      color: $fontcolor-primary;
+      cursor: pointer;
+    }
+    .message_container {
+      p {
+        margin: 10px 0;
+        color: $special-danger;
+      }
+    }
   }
 
-  button[type="submit"] {
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: $app-primary;
-    color: $fontcolor-primary;
-    cursor: pointer;
-  }
-  .message_container {
-    p {
-      margin: 10px 0;
-      color: $special-danger;
+  .add__orga__btn {
+
+
+    .btn__add {
+      color: $fontcolor-primary-dark;
     }
   }
 }

@@ -1,0 +1,34 @@
+.round-toggle {
+  width: 45px;
+  height: 26px;
+  border-radius: 20px;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease-in-out;
+}
+
+.round-toggle {
+  position: relative;
+}
+
+.round-toggle.active {
+  background-color: green;
+}
+
+.round-toggle::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  transition: 0.3s ease-in-out;
+}
+
+.round-toggle.active::before {
+  left: calc(100% - 23px);
+}

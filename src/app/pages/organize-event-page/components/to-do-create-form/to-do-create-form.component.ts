@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { map, Observable } from 'rxjs';
+import { Organisation } from 'src/app/core/models/organisation.model';
 import { toDo } from 'src/app/core/models/toDoItem.model';
 import { ToDoService } from 'src/app/core/services/to-do.service';
 
@@ -10,7 +11,7 @@ import { ToDoService } from 'src/app/core/services/to-do.service';
   styleUrls: ['./to-do-create-form.component.scss'],
 })
 export class ToDoCreateFormComponent implements OnInit {
-  @Input() organisationId!: number;
+  @Input() organisation!: Organisation;
   toDoForm!: FormGroup;
   toDoCardPreview$!: Observable<toDo>;
   isVisibleForm!: boolean;
@@ -28,7 +29,7 @@ export class ToDoCreateFormComponent implements OnInit {
         description: [null],
         informations: [null],
         isChecked: [false],
-        orgaId: [this.organisationId],
+        orgaId: [this.organisation.id],
       },
       { updateOn: 'blur' }
     );
@@ -46,7 +47,10 @@ export class ToDoCreateFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.tdService.createToDoForAnOrganisation(this.toDoForm.value);
+    this.tdService.createToDoForAnOrganisation(
+      this.toDoForm.value,
+      this.organisation
+    );
     this.isVisibleForm = false;
   }
 }

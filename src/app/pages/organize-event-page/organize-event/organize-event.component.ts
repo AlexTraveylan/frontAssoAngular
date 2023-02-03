@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Organisation } from 'src/app/core/models/organisation.model';
 import { OrganisationService } from 'src/app/core/services/organisation.service';
@@ -9,71 +11,55 @@ import { OrganisationService } from 'src/app/core/services/organisation.service'
   styleUrls: ['./organize-event.component.scss'],
 })
 export class OrganizeEventComponent {
-  password!: string;
   isAcces: boolean;
+  userName$!: BehaviorSubject<string>;
   message!: string;
   organisation$!: BehaviorSubject<Organisation>;
+  isLimitTime$!: BehaviorSubject<boolean>;
 
-  constructor(private oService: OrganisationService) {
+  loginForm!: FormGroup;
+
+  constructor(
+    private oService: OrganisationService,
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) {
+    this.userName$ = new BehaviorSubject<string>('Unknow User');
+    this.isLimitTime$ = new BehaviorSubject<boolean>(false);
     this.isAcces = false;
     this.organisation$ = this.oService.bCurrentOrganisation$;
+
+    this.loginForm = this.formBuilder.group({
+      login: [null],
+      password: [null],
+    });
   }
 
   submit() {
-    if (this.password == '1234') {
-      this.isAcces = true;
-    } else {
-      this.message = 'Acces refusé';
-    }
+    this.oService
+      .getOrganisationByPassword(this.loginForm.value.password)
+      .subscribe({
+        next: (currentOrga) => {
+          this.oService
+            .GetThenRefreshCurrentOrganisation(currentOrga[0])
+            .subscribe((currentOrga) => {
+              const today = new Date();
+              const deadline = new Date(currentOrga.date);
+
+              this.isLimitTime$.next(
+                deadline.getTime() < 3 * (1000 * 60 * 60 * 24) + today.getTime()
+              );
+              this.isAcces = true;
+              this.userName$.next(this.loginForm.value.login);
+            });
+        },
+        error: () => {
+          this.message = 'Aucune organisation trouvée';
+        },
+      });
   }
 
-  // toDo: toDo[] = [
-  //   {
-  //     description: 'Faire une affiche',
-  //     isChecked: false,
-  //   },
-  //   {
-  //     description: 'Faire des fleches',
-  //     isChecked: false,
-  //   },
-  //   {
-  //     description: "Demande d'autorisation",
-  //     isChecked: true,
-  //   },
-  //   {
-  //     description: 'Publication educartable',
-  //     isChecked: false,
-  //   },
-  //   {
-  //     description: 'Publication instagram',
-  //     isChecked: false,
-  //   },
-  //   {
-  //     description: 'Publication site web',
-  //     isChecked: false,
-  //   },
-  //   {
-  //     description: "Afficher les affiches à l'école",
-  //     isChecked: false,
-  //   },
-  //   {
-  //     description: 'Faire les courses manquantes',
-  //     isChecked: false,
-  //   },
-  //   {
-  //     description: 'Preparation de la nourriture',
-  //     isChecked: false,
-  //   },
-  // ];
-
-  // organisation: Organisation = {
-  //   id: 1,
-  //   typeEvent: 'Gouter des parents',
-  //   description: 'Vente de boissons, crepes et gauffres',
-  //   lieu: "A l'école devant l'entrée élémentaire",
-  //   date: '27 janvier 2023',
-  //   toDo: this.toDo,
-  //   horaire: '16h30 - 17h30',
-  //   tarifs: 'Crepes, gauffres : 1 €, boisson : 50 cts',
-  // };
+  goToCreateOrga() {
+    this.router.navigate(['createOrga']);
+  }
 }

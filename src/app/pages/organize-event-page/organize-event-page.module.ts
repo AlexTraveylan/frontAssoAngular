@@ -25,5 +25,6 @@ import { OrganizeEventComponent } from './organize-event/organize-event.componen
     SharedModule,
     ReactiveFormsModule,
   ],
+  exports: [InformationsCardComponent],
 })
 export class OrganizeEventPageModule {}

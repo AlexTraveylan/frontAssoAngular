@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="orga__form__container ">
+        <form [formGroup]="organisationForm">
+          <app-btn (click)="goBackToOrga()"><app-icon class="left__btn" type="LEFT"></app-icon></app-btn>
+          <h3> Création d'une page d'organisation</h3>
+          <div class="form__control">
+            <label for="typeEvent">Titre</label>
+            <input class="form-control" type="text" formControlName="typeEvent">
+          </div>
+
+          <div class="form__control">
+            <label for="description">Description</label>
+            <textarea class="form-control" formControlName="description"></textarea>
+          </div>
+
+          <div class="form__control">
+            <label for="lieu">Lieu</label>
+            <input class="form-control" type="text" formControlName="lieu">
+          </div>
+
+          <div class="form__control">
+            <label for="date">Date</label>
+            <input class="form-control" type="date" formControlName="date">
+          </div>
+
+          <div class="form__control">
+            <label for="horaire">Horaire</label>
+            <input class="form-control" type="text" formControlName="horaire">
+          </div>
+
+          <div class="form__control">
+            <label for="tarifs">Tarifs</label>
+            <input class="form-control" type="text" formControlName="tarifs">
+          </div>
+
+          <div class="form__control">
+            <label for="password">Mot de passe</label>
+            <input class="form-control" type="text" formControlName="password">
+          </div>
+
+          <div>
+            <button type="submit" [disabled]="organisationForm.invalid" (click)="submit()">Créer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6" *ngIf="organisationPreview$ | async as orgaPreview">
+      <div class="apercu__container">
+        <h3>Aperçu de l'objet qui sera crée</h3>
+        <app-informations-card [organisation]="orgaPreview"></app-informations-card>
+      </div>
+    </div>
+
+
+  </div>
+</div>

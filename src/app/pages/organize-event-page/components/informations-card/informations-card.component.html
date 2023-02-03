@@ -1,8 +1,14 @@
 <div class="event__card">
-  <h2>{{ organisation.typeEvent }} (Progression : {{ organisation.toDo | pourcent }})</h2>
+  <h2>{{ organisation.typeEvent }} </h2>
   <h4>{{ organisation.description }}</h4>
   <p><strong>Lieu : </strong> {{ organisation.lieu }}</p>
-  <p><strong>Date : </strong> {{ organisation.date }}</p>
+  <p><strong>Date : </strong> {{ organisation.date | date:'fullDate'}}</p>
   <p *ngIf="organisation.horaire"><strong>Horaire : </strong> {{ organisation.horaire }}</p>
   <p *ngIf="organisation.tarifs"><strong>Tarifs : </strong> {{ organisation.tarifs }}</p>
+  <div *ngIf="organisation.toDo | pourcent as pourcent">
+    <app-progress-circle [value]="pourcent"></app-progress-circle>
+  </div>
 </div>
+
+
+<!-- (Progression : {{ organisation.toDo | pourcent }}) -->

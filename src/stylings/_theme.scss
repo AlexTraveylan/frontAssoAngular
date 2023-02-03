@@ -1,7 +1,8 @@
 
 $app-background: #ffffff;
 $app-background-secondary:rgb(245, 245, 245);
-$app-background-secondary-dark:rgb(170, 170, 170, 0.85);
+$app-background-secondary-dark:rgb(170, 170, 170, 0.9);
+$app-background-basic: #bfc4c6;
 
 $app-primary: #2B2F16;
 $app-primary-light: #38320f;
@@ -9,8 +10,7 @@ $app-primary-light: #38320f;
 $app-secondary: #3C431B;
 $app-secondary-light: #4e4713;
 
-$app-color3:#61215C;
-$app-color3-light:#7e2340 ;
+$app-color3:#4e8d7a;
 
 $app-color4:#662142 ;
 $app-color4-light:#85232e ;
@@ -23,7 +23,7 @@ $fontcolor-primary-trans: #1C1C1C8A;
 $fontcolor-primary-dark: rgb(37, 35, 35);
 
 
-$special-succes: rgb(18, 148, 18);
+$special-succes: #9cda62;
 $special-succes-dark: rgb(13, 83, 13);
 $special-danger: rgb(161, 24, 24);
 $special-warning: rgb(155, 107, 19);

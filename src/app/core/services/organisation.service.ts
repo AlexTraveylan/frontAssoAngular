@@ -12,14 +12,15 @@ export class OrganisationService {
   orga: Organisation;
 
   constructor(private http: HttpClient) {
-    this.orga = new Organisation(-1, '', '', '', '', []);
+    this.orga = new Organisation(-1, '', '', '', '', new Date(), []);
     this.bCurrentOrganisation$ = new BehaviorSubject<Organisation>(this.orga);
-    this.GetThenRefreshCurrentOrganisation().subscribe();
   }
 
-  GetThenRefreshCurrentOrganisation(): Observable<Organisation> {
+  GetThenRefreshCurrentOrganisation(
+    cOrganisation: Organisation
+  ): Observable<Organisation> {
     return this.http
-      .get<Organisation>(`${Env.UrlOrganisation}1/`)
+      .get<Organisation>(`${Env.UrlOrganisation}${cOrganisation.id}/`)
       .pipe(
         tap((organisation) => this.bCurrentOrganisation$.next(organisation))
       );
@@ -29,5 +30,17 @@ export class OrganisationService {
     return this.http.get<Organisation>(
       `${Env.UrlOrganisation}${organisation_id}/`
     );
+  }
+
+  getOrganisationByPassword(
+    organisation_password: string
+  ): Observable<Organisation[]> {
+    return this.http.get<Organisation[]>(
+      `${Env.UrlOrganisation}?password=${organisation_password}`
+    );
+  }
+
+  createOrga(organisation: Organisation): Observable<Organisation> {
+    return this.http.post<Organisation>(Env.UrlOrganisation, organisation);
   }
 }

@@ -1,12 +1,29 @@
-<div class="todo__card" [ngClass]="{'strike': toDo.isChecked}">
+<div class="todo__card"
+  [ngClass]="{'color__validated': toDo.statut == 4, 'color__reserved__and__limitTime': toDo.statut == 3,  'color__limitTime' : toDo.statut == 2, 'color__reserved': toDo.statut == 1}">
+
+  <div class="toDo__check__btn">
+    <app-btn (click)="reserve(toDo)">
+      <app-icon *ngIf="!toDo.userAssigned" class="check__btn" type="CIRCLE"></app-icon>
+      <app-icon *ngIf="toDo.userAssigned" class="check__btn" type="CIRCLECHECKED"></app-icon>
+    </app-btn>
+  </div>
+
   <div class="toDo__left">
-    <p>{{ toDo.description }}</p>
+    <h3>{{ toDo.description }}</h3>
+    <p *ngIf="toDo.userAssigned">
+      <span class="user__span">{{ toDo.userAssigned }} </span>
+      <span class="assigned__date__span">( {{toDo.dateTimeAssigned | date: 'short' }} ) </span>
+    </p>
   </div>
 
   <div class="toDo__right">
     <app-pop-up-card [information]="toDo.informations"></app-pop-up-card>
-    <app-btn (click)="toggle(toDo)"><app-icon class="btn__check" [ngClass]="{'btn_checked': toDo.isChecked}"
-        type="CHECKED"></app-icon></app-btn>
-    <app-btn (click)="delete(toDo.id)"><app-icon class="btn__supp" type="DELETE"></app-icon></app-btn>
+    <div *ngIf="toDo.userAssigned" (click)="validate(toDo)">
+      <app-ios-button [isActive]="(toDo.statut == 4)"></app-ios-button>
+    </div>
+  </div>
+
+  <div class="btn__container">
+    <app-btn (click)="delete(toDo.id)"><app-icon class="btn__supp" type="CROSS"></app-icon></app-btn>
   </div>
 </div>

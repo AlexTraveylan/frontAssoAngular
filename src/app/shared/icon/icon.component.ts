@@ -16,7 +16,10 @@ export class IconComponent implements OnInit {
     | 'INFOS'
     | 'CHECKED'
     | 'PLUS'
-    | 'SEND';
+    | 'SEND'
+    | 'LEFT'
+    | 'CIRCLE'
+    | 'CIRCLECHECKED';
   icon!: IconDefinition;
 
   ngOnInit(): void {
@@ -36,6 +39,12 @@ export class IconComponent implements OnInit {
       this.icon = Icons.PLUS;
     } else if (this.type == 'SEND') {
       this.icon = Icons.SEND;
+    } else if (this.type == 'LEFT') {
+      this.icon = Icons.LEFT;
+    } else if (this.type == 'CIRCLE') {
+      this.icon = Icons.CIRCLE;
+    } else if (this.type == 'CIRCLECHECKED') {
+      this.icon = Icons.CIRCLECHECKED;
     }
   }
 }

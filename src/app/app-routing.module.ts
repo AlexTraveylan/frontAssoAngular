@@ -47,6 +47,13 @@ const routes: Routes = [
         (m) => m.OrganizeEventPageModule
       ),
   },
+  {
+    path: 'createOrga',
+    loadChildren: () =>
+      import('./pages/create-organize-event/create-organize-event.module').then(
+        (m) => m.CreateOrganizeEventModule
+      ),
+  },
 ];
 
 @NgModule({

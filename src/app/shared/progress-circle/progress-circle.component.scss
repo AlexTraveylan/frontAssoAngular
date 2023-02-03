@@ -1,0 +1,50 @@
+@import 'src/stylings/theme';
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: relative;
+
+  svg {
+    height: 150px;
+    width: 150px;
+    transform: rotate(90deg);
+
+    circle {
+      fill: none;
+      stroke: $special-succes-dark;
+      stroke-width: 10px;
+      transform: translate(5px, 5px);
+      stroke-linecap: round;
+      stroke-dasharray: 440;
+      stroke-dashoffset: 440;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  // svg circle:nth-child(2) {
+  //   stroke-dashoffset: 220;
+  // }
+
+  svg circle:nth-child(1) {
+    stroke: $app-background-secondary-dark;
+    stroke-dashoffset: 0;
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    font-weight: 400;
+  }
+}
+
+// @keyframes circle {
+//   to {
+//     stroke-dashoffset: 220;
+//   }
+// }
