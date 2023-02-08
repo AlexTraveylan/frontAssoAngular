@@ -1,0 +1,26 @@
+@import "src/stylings/theme";
+
+.joinus__container {
+  color: $fontcolor-primary-dark;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+
+  .presentation__message, .information__needed, .by__mail {
+    margin: 5px 15px;
+  }
+
+  .by__letter {
+    margin-top: 5px;
+
+    h3 {
+      margin: 0 15px 15px 15px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+
+}

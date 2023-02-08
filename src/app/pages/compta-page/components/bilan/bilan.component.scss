@@ -1,0 +1,60 @@
+@import 'src/stylings/theme';
+
+.bilan__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+
+  .left {
+    display: flex;
+    flex-direction: row;
+
+    .left__element {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      margin: 5px;
+      background-color: #4ec1d3;
+
+      h3 {
+        color: white;
+      }
+
+      p {
+        color: #2695a4;
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .right__element {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #328e9d;
+      padding: 15px;
+      margin: 5px;
+
+
+      h3 {
+        color: #54b8c4;
+      }
+
+      p {
+        color: white;
+      }
+
+
+    }
+
+  }
+
+}

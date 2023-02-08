@@ -1,0 +1,53 @@
+@import 'src/stylings/theme';
+
+.btn__container {
+  text-align: center;
+  margin: 15px 0;
+
+  .btn__add {
+    text-align: center;
+    color: $fontcolor-primary-dark;
+  }
+}
+
+
+
+
+.form__container {
+  padding: 5px !important;
+  margin: 15px !important;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  background: $app-background-secondary;
+  color: $fontcolor-primary-dark;
+
+  h3 {
+  color: $fontcolor-primary-dark;
+  text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    .form-control {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid $app-primary;
+    }
+
+    label{
+      font-weight:bold;
+      margin-bottom:5px;
+    }
+
+    button {
+      background-color: $app-primary;
+      color: $fontcolor-primary;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 10px;
+      align-self: flex-start;
+    }
+  }
+}

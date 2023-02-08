@@ -1,0 +1,5 @@
+<div *ngIf="comptabilites$ | async as comptabilites">
+  <app-bilan [comptabilites]="comptabilites"></app-bilan>
+  <app-compta-card [comptabilites]="comptabilites"></app-compta-card>
+  <app-create-compta-form></app-create-compta-form>
+</div>

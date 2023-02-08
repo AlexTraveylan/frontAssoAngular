@@ -1,0 +1,18 @@
+<div class="bilan__container" *ngIf="comptabilites">
+  <div class="left">
+    <div class="left__element">
+      <h3>Recette totale : </h3>
+      <p>{{ recette | currency: 'EUR'}}</p>
+    </div>
+    <div class="left__element">
+      <h3>Dépense totale :</h3>
+      <p>{{ depenses | currency: 'EUR'}}</p>
+    </div>
+  </div>
+  <div class="right">
+    <div class="right__element">
+      <h3>Trésorerie :</h3>
+      <p>{{ recette - depenses | currency: 'EUR'}}</p>
+    </div>
+  </div>
+</div>

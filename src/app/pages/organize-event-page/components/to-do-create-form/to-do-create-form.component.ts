@@ -42,11 +42,11 @@ export class ToDoCreateFormComponent implements OnInit {
     );
   }
 
-  toggleTodoForm() {
+  toggleTodoForm(): void {
     this.isVisibleForm = !this.isVisibleForm;
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.tdService.createToDoForAnOrganisation(
       this.toDoForm.value,
       this.organisation

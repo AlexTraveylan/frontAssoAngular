@@ -2,6 +2,7 @@
 
 h3 {
   color: $fontcolor-primary-dark;
+  text-align: center;
 }
 
 .card {
@@ -36,10 +37,6 @@ form {
     margin-top: 10px;
     align-self: flex-start;
   }
-}
-
-h3 {
-  text-align: center;
 }
 
 .btn__container {

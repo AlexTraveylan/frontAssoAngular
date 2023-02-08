@@ -1,0 +1,31 @@
+@import 'src/stylings/theme';
+
+.table__container {
+  overflow-y: scroll;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    color: $fontcolor-primary-dark;
+    font-size: 1rem;
+  }
+
+  thead {
+    font-weight: bold;
+  }
+
+  td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  text-align: center;
+  }
+
+  th {
+  background-color: #ddd;
+  }
+
+  tr:nth-child(even) {
+  background-color: #f2f2f2;
+  }
+}

@@ -1,0 +1,55 @@
+<div class="btn__container" (click)="toogleVisible()">
+  <app-btn>
+    <app-icon class="btn__add" class="btn__add" type="PLUS"></app-icon>
+  </app-btn>
+</div>
+
+<div class="form__container" *ngIf="isVisibleForm">
+  <h3>Création d'une nouvelle ligne</h3>
+  <form [formGroup]="comptabiliteForm">
+    <div>
+      <label for="date">Date :</label>
+      <input class="form-control" type="date" formControlName="date">
+    </div>
+    <div>
+      <label for="source">Provenance :</label>
+      <input class="form-control" id="source" type="select" formControlName="source"
+        placeholder="De qui ou quel organisme ?">
+    </div>
+    <div>
+      <label for="label">Libélé :</label>
+      <input class="form-control" type="text" formControlName="label"
+        placeholder="Donner un titre à la depense ou recette">
+    </div>
+    <div>
+      <label for="amount">Montant :</label>
+      <input class="form-control" type="number" formControlName="amount" placeholder="En €, ne pas mettre l'unité">
+    </div>
+    <div>
+      <label for="paiementType">Type :</label>
+      <select class="form-control" formControlName="paiementType" id="paiementType">
+        <option value="Liquide">Liquide</option>
+        <option value="Cheque">Cheque</option>
+        <option value="Virement">Virement</option>
+      </select>
+    </div>
+    <div>
+      <label for="isPositive">Positif ou négatif : </label>
+      <select class="form-control" formControlName="isPositive" id="isPositive">
+        <option value=true>Recette</option>
+        <option value=false>Depense</option>
+      </select>
+    </div>
+    <div>
+      <label for="note">Note : </label>
+      <input class="form-control" type="text" formControlName="note" placeholder="Optionnel">
+    </div>
+    <div>
+      <label for="requestToken">Code du Trésorier : </label>
+      <input class="form-control" type="password" formControlName="requestToken" placeholder="Code de sécurité">
+    </div>
+
+    <button type="submit" [disabled]="comptabiliteForm.invalid" (click)="onSubmit()">Créer</button>
+
+  </form>
+</div>

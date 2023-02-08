@@ -4,7 +4,8 @@
   <div class="toDo__check__btn">
     <app-btn (click)="reserve(toDo)">
       <app-icon *ngIf="!toDo.userAssigned" class="check__btn" type="CIRCLE"></app-icon>
-      <app-icon *ngIf="toDo.userAssigned" class="check__btn" type="CIRCLECHECKED"></app-icon>
+      <app-icon [ngClass]="{'checked': (toDo.statut == 1 || toDo.statut == 3 || toDo.statut == 4)}"
+        *ngIf="toDo.userAssigned" class="check__btn" type="CIRCLECHECKED"></app-icon>
     </app-btn>
   </div>
 
@@ -12,15 +13,15 @@
     <h3>{{ toDo.description }}</h3>
     <p *ngIf="toDo.userAssigned">
       <span class="user__span">{{ toDo.userAssigned }} </span>
-      <span class="assigned__date__span">( {{toDo.dateTimeAssigned | date: 'short' }} ) </span>
+      <span class="assigned__date__span">({{toDo.dateTimeAssigned | date: 'shortDate'}} ) </span>
     </p>
   </div>
 
   <div class="toDo__right">
-    <app-pop-up-card [information]="toDo.informations"></app-pop-up-card>
     <div *ngIf="toDo.userAssigned" (click)="validate(toDo)">
       <app-ios-button [isActive]="(toDo.statut == 4)"></app-ios-button>
     </div>
+    <app-pop-up-card [information]="toDo.informations"></app-pop-up-card>
   </div>
 
   <div class="btn__container">

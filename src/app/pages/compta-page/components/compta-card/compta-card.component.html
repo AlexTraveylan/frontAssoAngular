@@ -1,0 +1,26 @@
+<div class="table__container">
+  <table>
+    <thead>
+      <tr>
+        <td>Date</td>
+        <td>Provenance</td>
+        <td>Libélé</td>
+        <td>Montant</td>
+        <td>Type</td>
+        <td>Note</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let comptabilite of comptabilites">
+        <td>{{ comptabilite.date | date:'shortDate'}}</td>
+        <td>{{ comptabilite.source }}</td>
+        <td>{{ comptabilite.label }}</td>
+        <td><span *ngIf="!comptabilite.isPositive"> - </span> {{ comptabilite.amount | currency: 'EUR'}}</td>
+        <td>{{ comptabilite.paiementType }}</td>
+        <td *ngIf="comptabilite.note">{{ comptabilite.note }}</td>
+        <td *ngIf="!comptabilite.note"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

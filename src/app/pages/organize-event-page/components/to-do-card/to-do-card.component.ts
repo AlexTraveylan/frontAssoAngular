@@ -12,7 +12,7 @@ import { ToDoService } from 'src/app/core/services/to-do.service';
 export class ToDoCardComponent implements OnInit {
   @Input() toDo!: toDo;
   @Input() userName!: string;
-  @Input() isLimitTime!: boolean;
+  @Input() isLimitTime!: boolean | null;
   @Input() organisation!: Organisation;
 
   constructor(

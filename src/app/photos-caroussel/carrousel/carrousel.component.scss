@@ -1,8 +1,85 @@
+@import "src/stylings/theme";
+
+.carousel__container {
+  position: relative;
+
+  .left,.right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .chevron__icon {
+      color: rgba(255, 255, 255);
+    }
+  }
+
+  .right {
+    right: 0;
+  }
+}
+
 .carousel {
   display: flex;
   overflow: hidden;
+  position: relative;
+
+
+
+  .text__content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 45px;
+    width: 90%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1, p {
+      font-weight: bold;
+    }
+
+    a {
+      color: $app-color3;
+      cursor: pointer;
+
+      &:hover {
+        color: $special-succes-dark;
+      }
+    }
+
+  }
 
   img {
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  .carousel__container {
+    position: relative;
+
+    .left,.right {
+      top: 25%;
+    }
+
+    .right {
+      right: 5%;
+    }
+
+    .left {
+      left: 5%;
+    }
+  }
+
+  .carousel {
+    .text__content {
+      top: 25%;
+      width: 65%;
+    }
   }
 }

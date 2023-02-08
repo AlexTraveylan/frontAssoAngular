@@ -19,7 +19,11 @@ export class IconComponent implements OnInit {
     | 'SEND'
     | 'LEFT'
     | 'CIRCLE'
-    | 'CIRCLECHECKED';
+    | 'CIRCLECHECKED'
+    | 'CHEVRONLEFT'
+    | 'CHEVRONRIGHT'
+    | 'CHEVRONDOWN'
+    | 'CHEVRONUP';
   icon!: IconDefinition;
 
   ngOnInit(): void {
@@ -45,6 +49,14 @@ export class IconComponent implements OnInit {
       this.icon = Icons.CIRCLE;
     } else if (this.type == 'CIRCLECHECKED') {
       this.icon = Icons.CIRCLECHECKED;
+    } else if (this.type == 'CHEVRONLEFT') {
+      this.icon = Icons.CHEVRONLEFT;
+    } else if (this.type == 'CHEVRONRIGHT') {
+      this.icon = Icons.CHEVRONRIGHT;
+    } else if (this.type == 'CHEVRONDOWN') {
+      this.icon = Icons.CHEVRONDOWN;
+    } else if (this.type == 'CHEVRONUP') {
+      this.icon = Icons.CHEVRONUP;
     }
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Organisation } from 'src/app/core/models/organisation.model';
@@ -30,8 +30,11 @@ export class OrganizeEventComponent {
     this.organisation$ = this.oService.bCurrentOrganisation$;
 
     this.loginForm = this.formBuilder.group({
-      login: [null],
-      password: [null],
+      login: [
+        null,
+        [Validators.required, Validators.pattern(/(^[a-zA-Z]{2})/)],
+      ],
+      password: [null, Validators.required],
     });
   }
 
