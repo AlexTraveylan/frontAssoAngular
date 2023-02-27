@@ -8,7 +8,7 @@
     <h2 class="event-title">{{ theEvent.title }}</h2>
     <p class="event-details">{{ theEvent.description }}</p>
     <div *ngIf="theEvent.lien">
-      <a class="event-link" (click)="ouvreNouvelOnglet(theEvent.lien)">En savoir plus</a>
+      <a class="event-link" (click)="navivateToLink(theEvent.lien)">En savoir plus</a>
     </div>
   </div>
 </div>

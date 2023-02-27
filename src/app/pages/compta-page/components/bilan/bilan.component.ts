@@ -20,7 +20,5 @@ export class BilanComponent implements OnInit {
         this.depenses = this.depenses + parseFloat(elem.amount);
       }
     }
-    console.log(this.recette);
-    console.log(this.depenses);
   }
 }

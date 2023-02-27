@@ -54,6 +54,13 @@ const routes: Routes = [
         (m) => m.CreateOrganizeEventModule
       ),
   },
+  {
+    path: 'details',
+    loadChildren: () =>
+      import('./pages/details-event/details-event.module').then(
+        (m) => m.DetailsEventModule
+      ),
+  },
 ];
 
 @NgModule({

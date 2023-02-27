@@ -1,7 +1,7 @@
 <div class="carousel__container">
-  <div *ngFor="let image of images" class="carousel" (click)="next(1)">
+  <div *ngFor="let image of images" class="carousel">
 
-    <div class="text__content">
+    <div class="text__content" *ngIf="image.titleContent && image.textContent">
       <h1>{{ image.titleContent }}</h1>
       <p>{{ image.textContent }}</p>
       <a *ngIf="image.linkUrl" (click)="redirect(image.linkUrl)">En savoir plus</a>

@@ -9,7 +9,7 @@ import { imageCaroussel } from 'src/app/core/models/imageCarrousel.model';
 export class CarrouselAccueilComponent {
   images: imageCaroussel[] = [
     {
-      id: 1,
+      id: 0,
       imageUrl: 'assets/img/accueil/ecole1.jpeg',
       titleContent: 'A propos de Nous',
       textContent:
@@ -17,21 +17,21 @@ export class CarrouselAccueilComponent {
       linkUrl: 'about',
     },
     {
-      id: 2,
+      id: 1,
       imageUrl: 'assets/img/accueil/ecole2.jpeg',
       titleContent: "Ce qu'on fait",
       textContent: 'Retrouvez les événements passés et les photos',
       linkUrl: 'eventend',
     },
     {
-      id: 3,
+      id: 2,
       imageUrl: 'assets/img/accueil/ecole3.jpg',
       titleContent: 'Espace membre',
       textContent: 'Un espace simplifié pour organiser les futurs évennements',
       linkUrl: 'orga',
     },
     {
-      id: 4,
+      id: 3,
       imageUrl: 'assets/img/accueil/ecole4.jpg',
       titleContent: 'Vie scolaire',
       textContent: "Retrouver sur ce site les résumé des conseils d'école.",

@@ -19,6 +19,7 @@ export class EventListComponent implements OnInit {
         title: "Fête de l'école, Tombola",
         description:
           'Tombola pour Noël, avec la collaboration des commerçants du quartier pour les lots',
+        lien: 'details/tombola',
       },
 
       {
@@ -29,7 +30,7 @@ export class EventListComponent implements OnInit {
         title: 'Gouter participatif',
         description:
           "Organisation d'un gouter participatif pres du lac. Tous les parents conviés !",
-        lien: 'https://www.parents-nelson-mandela.fr/gouter2022.php',
+        lien: 'details/gouter-participatif',
       },
 
       {
@@ -49,16 +50,6 @@ export class EventListComponent implements OnInit {
         title: 'Vide-jouet',
         description:
           "L'evennement s'est déroulé tranquillement dans l'enceinte de l'école.",
-        lien: 'https://www.parents-nelson-mandela.fr/assets/fliyer.pdf',
-      },
-
-      {
-        id: 4,
-        day: 31,
-        mouth: 'mai',
-        year: 2022,
-        title: 'Vide-jouet',
-        description: 'Accord de principe de la marie pour le vide-jouet',
       },
 
       {
@@ -68,16 +59,6 @@ export class EventListComponent implements OnInit {
         year: 2022,
         title: 'Création validée !',
         description: "L'association a été validée et existe officiellement !",
-      },
-
-      {
-        id: 2,
-        day: 13,
-        mouth: 'mai',
-        year: 2022,
-        title: 'Site internet',
-        description:
-          "Un site internet ? Début du developpement d'un site internet",
       },
 
       {

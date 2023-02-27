@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Event } from 'src/app/core/models/event.model';
 
 @Component({
@@ -9,7 +10,9 @@ import { Event } from 'src/app/core/models/event.model';
 export class EventComponent {
   @Input() theEvent!: Event;
 
-  ouvreNouvelOnglet(url: string) {
-    window.open(url, '_blank');
+  constructor(private router: Router) {}
+
+  navivateToLink(lien: string): void {
+    this.router.navigate(lien.split('/'));
   }
 }

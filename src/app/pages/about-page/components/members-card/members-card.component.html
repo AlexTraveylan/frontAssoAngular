@@ -1,5 +1,5 @@
 <div class="member__card">
-  <img [src]="member.photoProfilUrl" alt="Photo de Profil du membre">
+  <img class="photo_profil" [src]="member.photoProfilUrl" alt="Photo de Profil du membre">
 
   <p>{{ member.name }} {{ member.firstName }}
     <span class="role" *ngIf="member.role != 'Membre'"> ({{ member.role }})</span>

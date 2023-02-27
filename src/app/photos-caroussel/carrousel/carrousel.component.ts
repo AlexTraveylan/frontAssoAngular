@@ -11,8 +11,7 @@ export class CarrouselComponent implements OnInit, OnDestroy {
   @Input() images!: imageCaroussel[];
 
   currentIndex: number = 0;
-  interval: any;
-  direction: string = 'right';
+  interval!: NodeJS.Timer;
 
   constructor(private router: Router) {}
 
@@ -27,16 +26,27 @@ export class CarrouselComponent implements OnInit, OnDestroy {
   }
 
   next(dir: 1 | -1): void {
+    clearInterval(this.interval);
+    this.interval = setInterval(() => {
+      this.next(1);
+    }, 10000);
     let realDir: number;
     if (dir == -1) {
       realDir = this.images.length - 1;
     } else {
       realDir = 1;
     }
-    this.currentIndex = (this.currentIndex + dir) % this.images.length;
+    this.currentIndex = (this.currentIndex + realDir) % this.images.length;
   }
 
   redirect(imageUrl: string) {
-    this.router.navigate([imageUrl]);
+    console.log(imageUrl.startsWith('http'));
+    if (imageUrl.startsWith('http')) {
+      console.log('in match');
+      window.open(imageUrl, '_blank');
+    } else {
+      console.log('go router');
+      this.router.navigate([imageUrl]);
+    }
   }
 }

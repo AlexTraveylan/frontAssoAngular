@@ -19,6 +19,7 @@
     }
 
     input {
+      min-width: 300px;
       padding: 10px;
       margin-bottom: 20px;
       border-radius: 5px;
@@ -46,5 +47,18 @@
     .btn__add {
       color: $fontcolor-primary-dark;
     }
+  }
+}
+
+.autorized__container {
+  overflow: hidden;
+
+  .todo_cards_container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 }

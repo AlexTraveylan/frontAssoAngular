@@ -9,10 +9,11 @@
   background-color: $app-background-secondary-dark;
   box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.1);
   border-radius: 45px;
-  margin: 15px;
+  margin: 5px;
   padding: 0 1em ;
   position: relative;
   min-height: 50px;
+  width: 350px;
 
   .btn__container {
     position: absolute;
@@ -71,6 +72,7 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 0.5em;
+  position: relative;
 }
 
 .cancel__btn {

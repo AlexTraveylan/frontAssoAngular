@@ -5,8 +5,8 @@
 }
 .popup__container {
   position: absolute;
-  left: calc(50vw - 150px);
-  background-color: $app-background-secondary-dark;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.815);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   width: 300px;
   display: flex;
@@ -17,7 +17,7 @@
   z-index: 10;
 
   .btn_desactivate {
-    color: $fontcolor-primary-dark;
+    color: rgb(216, 24, 24);
   }
 
   .information {

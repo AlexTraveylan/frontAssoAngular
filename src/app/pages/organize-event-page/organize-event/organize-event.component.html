@@ -2,11 +2,11 @@
   <form [formGroup]="loginForm">
     <div>
       <label for="login">Votre nom :</label>
-      <input type="text" formControlName="login">
+      <input type="text" formControlName="login" placeholder="Ex : John (En lettres)">
     </div>
     <div>
-      <label for="password">Mot de passe :</label>
-      <input type="password" id="password" formControlName="password" placeholder="Mot de passe">
+      <label for="password">Code de l'événement :</label>
+      <input type="text" id="password" formControlName="password" placeholder="Donné par l'organisateur">
     </div>
     <button type="submit" (click)="submit()" [disabled]="loginForm.invalid">Soumettre</button>
     <div class="message_container" *ngIf="message">
@@ -24,11 +24,11 @@
 <div class=" autorized__container" *ngIf="isAcces">
   <div *ngIf="organisation$ | async as organisation">
     <app-informations-card [organisation]="organisation"></app-informations-card>
-    <div class="container-fluid px-0">
+    <div>
       <div *ngIf="userName$ | async as userName">
-        <div class="row">
+        <div class="todo_cards_container">
           <app-to-do-card [organisation]="organisation" [userName]="userName" [isLimitTime]="(isLimitTime$ | async)"
-            class="col-12 col-md-6 col-xl-4" *ngFor="let item of organisation.toDo" [toDo]="item"></app-to-do-card>
+            *ngFor="let item of organisation.toDo" [toDo]="item"></app-to-do-card>
         </div>
       </div>
       <app-to-do-create-form [organisation]="organisation"></app-to-do-create-form>

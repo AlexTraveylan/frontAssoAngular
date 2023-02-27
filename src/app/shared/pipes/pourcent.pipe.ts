@@ -5,12 +5,13 @@ import { toDo } from '../../core/models/toDoItem.model';
   name: 'pourcent',
 })
 export class ShortenPipe implements PipeTransform {
-  transform(toDo: toDo[] | null): number {
-    let calc: number = 0;
-    if (toDo && toDo.length != 0) {
+  transform(toDos: toDo[] | null): string {
+    let calc: string = '0';
+
+    if (toDos && toDos.length != 0) {
       calc = Math.round(
-        (toDo.filter((data) => data.statut == 4).length / toDo.length) * 100
-      );
+        (toDos.filter((data) => data.statut == 4).length / toDos.length) * 100
+      ).toString();
     }
     return calc;
   }

@@ -28,7 +28,7 @@ export class AboutComponent {
       firstName: 'Timothée',
       name: 'DEMARES',
       role: 'Trésorier',
-      photoProfilUrl: Env.photo_profil_m,
+      photoProfilUrl: 'assets/img/photos_profil/TimDem.jpg',
     },
     {
       id: 4,
